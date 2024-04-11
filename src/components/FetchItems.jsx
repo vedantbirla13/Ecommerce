@@ -15,7 +15,7 @@ const FetchItems = () => {
       const signal = controller.signal;
   
       dispatch(fetchStatusActions.markFetchingStarted())
-      fetch("http://localhost:8080/items", { signal })
+      fetch("https://ecommercee-65.vercel.app/items", { signal })
         .then((res) => res.json())
         .then(({ items }) => {
           dispatch(fetchStatusActions.markFetchDone())
