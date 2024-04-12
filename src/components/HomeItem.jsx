@@ -20,16 +20,16 @@ const HomeItem = ({ item }) => {
 
   return (
     <div className="item-container">
-      <img className="item-image" src={item?.image} alt="item image" />
+      <img className="item-image" src={item?.thumbnail} alt="item image" />
       <div className="rating">
-        {item?.rating?.stars} ⭐ | {item?.rating?.count}
+        {item?.rating?.stars} ⭐ | {item?.rating}
       </div>
-      <div className="company-name">{item?.company}</div>
-      <div className="item-name">{item?.item_name}</div>
+      <div className="company-name">{item?.description}</div>
+      <div className="item-name py-1">{item?.title}</div>
       <div className="price">
-        <span className="current-price">Rs {item?.current_price}</span>
+        <span className="current-price">Rs {item?.price}</span>
         <span className="original-price">Rs {item?.original_price}</span>
-        <span className="discount">({item?.discount_percentage}% OFF)</span>
+        <span className="discount">({item?.discountPercentage}% OFF)</span>
       </div>
       {elementFound ? (
         <button

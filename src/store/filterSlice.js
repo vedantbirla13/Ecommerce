@@ -12,8 +12,8 @@ const filterSlice = createSlice({
       const { items, search } = action.payload;
       const tempItems = items.filter(
         (item) =>
-          item.item_name.toLowerCase().includes(search.toLowerCase()) ||
-          item.company.toLowerCase().includes(search.toLowerCase())
+          item.title.toLowerCase().includes(search.toLowerCase()) ||
+          item.description.toLowerCase().includes(search.toLowerCase())
       );
       state.filteredProducts = tempItems;
     },

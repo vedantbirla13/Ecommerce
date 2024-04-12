@@ -4,7 +4,6 @@ import { useSelector } from "react-redux"
 
 const Home = () => {
 
-    
   const filteredProducts = useSelector(state => state.filter.filteredProducts) 
   
   return (

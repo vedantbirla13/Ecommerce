@@ -6,6 +6,7 @@ const BagSummary = () => {
     const bagItemIds = useSelector(state => state.bag)
     const items = useSelector((state) => state.items);
 
+    
     const CONVENIENCE_FEES = 99;
     let totalItem = bagItemIds.length;
     let totalMRP = 0;
@@ -15,9 +16,15 @@ const BagSummary = () => {
     return itemIndex >= 0;
   });
 
+  
+
+  
+
   finalItems.forEach(bagItem => {
-    totalMRP += bagItem.original_price;
-    totalDiscount += bagItem.original_price - bagItem.current_price 
+  const discountCalc = Math.floor((bagItem.price % bagItem.discountPercentage) * 100)
+  console.log(discountCalc)
+    totalMRP += bagItem.price;
+    totalDiscount += bagItem.price - discountCalc 
   });
 
   let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES

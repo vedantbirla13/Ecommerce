@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
-import { FaFaceGrinHearts, FaBagShopping } from "react-icons/fa6";
+import { FaBagShopping } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux"
 import "../index.css";
 import { filterActions } from "../store/filterSlice";
+import Sidebar from "./Sidebar";
 
 const Header = () => {
   const [search, setSearch] = useState("")
@@ -48,17 +50,14 @@ const Header = () => {
       </div>
       <div className="action_bar">
         <div className="action_container">
-          <BsFillPersonFill />
+          <BsFillPersonFill  />
           <span className="action_name">Profile</span>
         </div>
 
-        <div className="action_container">
-          <FaFaceGrinHearts />
-          <span className="action_name">Wishlist</span>
-        </div>
+       <Sidebar />
 
         <Link to="/bag" className="action_container">
-          <FaBagShopping />
+          <FaBagShopping color="black" />
           <span className="action_name">Bag</span>
           <span className="bag-item-count">{bag.length}</span>
         </Link>

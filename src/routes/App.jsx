@@ -9,6 +9,7 @@ import LoadingSpinner from "../components/LoadingSpinner"
 function App() {
 
   const fetchStatus  = useSelector(store => store.fetchStatus)
+  
   return (
     <>
   <Header />
