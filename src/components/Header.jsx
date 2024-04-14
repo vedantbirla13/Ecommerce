@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BsFillPersonFill } from "react-icons/bs";
-import { FaBagShopping } from "react-icons/fa6";
-import { FaHeart } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
+import { IoBagHandleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux"
 import "../index.css";
@@ -50,14 +49,14 @@ const Header = () => {
       </div>
       <div className="action_bar">
         <div className="action_container">
-          <BsFillPersonFill  />
+          <FaRegUser size="19px"  />
           <span className="action_name">Profile</span>
         </div>
 
        <Sidebar />
 
         <Link to="/bag" className="action_container">
-          <FaBagShopping color="black" />
+          <IoBagHandleOutline size="20px" color="black" />
           <span className="action_name">Bag</span>
           <span className="bag-item-count">{bag.length}</span>
         </Link>

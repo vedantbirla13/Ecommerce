@@ -14,7 +14,7 @@ const FetchItems = () => {
     const signal = controller.signal;
 
     dispatch(fetchStatusActions.markFetchingStarted());
-    fetch("https://dummyjson.com/products")
+    fetch("https://dummyjson.com/products?limit=0")
       .then((res) => res.json())
       .then(({ products }) => {
         dispatch(itemsActions.addInitialItems(products));
