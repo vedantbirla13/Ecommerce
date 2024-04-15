@@ -15,7 +15,6 @@ const Filters = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-
     // Used set so that only unique catgeories can be shown and duplicates will be filtered
     const categories = new Set(items.map((item) => item.category));
     // As it was stored as set So converted it into array by using "..." for rendering
@@ -37,7 +36,7 @@ const Filters = () => {
 
     let updatedCategories;
     if (checked) {
-      updatedCategories = [value, ...selectedCategories];
+      updatedCategories = [...selectedCategories, value];
     } else {
       updatedCategories = selectedCategories.filter((cat) => cat !== value);
     }
@@ -47,6 +46,7 @@ const Filters = () => {
     // Dispatch the updated selected categories to the Redux storsinfe
     dispatch(filterActions.catgeoryFilter(updatedCategories));
   };
+
 
   const handleBrandChange = (e) => {
     const { value, checked } = e.target;
@@ -75,12 +75,12 @@ const Filters = () => {
     <div className="filters" style={{ position: "sticky", top: 0 }}>
       <div className="d-flex justify-content-between">
         <h6 className="lead">FILTERS</h6>
-        <span
-          style={{ cursor: "pointer", userSelect: "none" }}
-          onClick={handleClearFilters}
-        >
-          CLEAR ALL
-        </span>
+            <span
+              style={{ cursor: "pointer", userSelect: "none" }}
+              onClick={handleClearFilters}
+            >
+              CLEAR ALL
+            </span>
       </div>
       <div className="d-flex flex-column gap-20">
         <p className="filter-heading">Filter by Category</p>

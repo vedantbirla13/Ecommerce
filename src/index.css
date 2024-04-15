@@ -25,7 +25,7 @@
 
   .nav_bar {
     display: flex;
-    min-width: 500px;
+    min-width: 600px;
     justify-content: space-evenly;
   }
   
@@ -141,7 +141,8 @@
     margin: 20px 5px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
+    align-items: center;
   }
 
   .item-filter-container {
@@ -219,7 +220,8 @@
   
   .items-container {
     border: 2px solid rgb(230, 229, 229);
-    width: 80%;
+    width: fit-content;
+    height: fit-content;
   }
   .item-container {
     width: 250px;
@@ -330,6 +332,11 @@
   a.action_container:link {
     color:black;
   }
+
+  .sidebar{
+    position: relative;
+  }
+
   .bag-items-container {
     display: inline-block;
     width: 50%;
@@ -340,19 +347,68 @@
     font-size: 13px;
     line-height: 1.42857143;
   }
-
   .wishlist-items-container {
-    display: inline-block;
     color: #282c3f;
     font-size: 13px;
   }
-
-  .no-wishlist{
+  
+  .no-wishlist {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the container takes the full height */
   }
   
+  .wishlist-text {
+    position: absolute; /* Position the no-wishlist message absolutely */
+    top: 50%; /* Move it 50% from the top */
+    left: 50%; /* Move it 50% from the left */
+    transform: translate(-50%, -50%); /* Center the element */
+    text-align: center; /* Center the text horizontally */
+    font-family: poppins;
+  }
+
+  .wishlist-button {
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 15px;
+    font-family: poppins;
+  }
+  
+  .continue-shopping-btn {
+    width: 100%; /* Make the button take full width */
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .continue-shopping-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .continue-shopping-button {
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .continue-shopping-button:hover {
+    background-color: #0056b3;
+  }
+
   .bag-page {
     width: 100%;
     margin-left: 12.5%;
@@ -590,3 +646,48 @@
   color: red;
   background-color: white;
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .action_bar,
+  .logo_container {
+    margin: 10px 0;
+  }
+
+  .nav_bar {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .search_bar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .item-container {
+    width: calc(50% - 20px);
+    margin: 10px;
+  }
+
+  .category_heading {
+    margin-left: 10px; /* Adjust margin for smaller screens */
+  }
+
+  .filters {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .item-container {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+  }
+}
+
+
+

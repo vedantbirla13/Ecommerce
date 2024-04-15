@@ -37,7 +37,7 @@ const Header = () => {
         <a href="#">Home & Living</a>
         <a href="#">Beauty</a>
         <a href="#">
-          Studio <sup>New</sup>
+          Studio <sup style={{ color: "red" }}>New</sup>
         </a>
       </nav>
       <div className="search_bar">

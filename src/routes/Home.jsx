@@ -26,7 +26,7 @@ const Home = () => {
           className="category-badge"
         >
           {selectedFilters.map((product) => (
-            <Badge pill bg="secondary">
+            <Badge pill bg="secondary" key={product} >
               {product}
             </Badge>
           ))}

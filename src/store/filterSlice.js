@@ -48,7 +48,6 @@ const filterSlice = createSlice({
 
     brandFilter: (state,action) => {
       state.brand = action.payload
-      console.log(state.brand)
       if (action.payload.length === 0 ) {
         // If no categories selected, show all products
         state.filteredProducts = state.products.items;

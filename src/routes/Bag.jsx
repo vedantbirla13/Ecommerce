@@ -36,7 +36,7 @@ const bag = () => {
             </div>
           ) : (
             <Link to="/" style={{ textDecoration: "none" }} className="mx-2">
-              <button className="btn btn-info py-2 text-white" style={{ fontFamily: "poppins" }}>Continue shopping</button>
+              <button className="continue-shopping-button" >Continue shopping</button>
             </Link>
           )}
         </div>

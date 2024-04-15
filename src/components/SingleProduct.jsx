@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { Breadcrumb, Button, Col, Container, Image, Row } from "react-bootstrap";
 import { FaShoppingBag } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { CiDeliveryTruck } from "react-icons/ci";
@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import HomeItem from "./HomeItem";
 import { wishlistActions } from "../store/wishlistSlice";
 import { bagActions } from "../store/bagSlice";
+import { useLocation } from "react-router-dom";
 
 const SingleProduct = ({ singleProduct }) => {
   const dispatch = useDispatch();
@@ -67,10 +68,17 @@ const SingleProduct = ({ singleProduct }) => {
     "Saturday",
   ];
 
+  const { pathname } = useLocation();
+ 
 
   return (
-    <Container fluid className="my-4">
-      <Row>
+    <Container fluid className="">
+      <Breadcrumb className="mx-3 mt-4">
+      <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+      <Breadcrumb.Item active >Products</Breadcrumb.Item>
+      <Breadcrumb.Item active>product {pathname} </Breadcrumb.Item>
+      </Breadcrumb>
+      <Row className="mx-4">
         <Col xl={7} lg={12} md={12}>
           {
             <div className="single-prod-container">
@@ -90,7 +98,7 @@ const SingleProduct = ({ singleProduct }) => {
           }
         </Col>
         <Col xl={5} lg={12} md={12}>
-          <Row>
+          <Row >
             <Col>
               <div className="my-4">
                 <h2 style={{ fontFamily: "Poppins" }}>{singleProduct.title}</h2>

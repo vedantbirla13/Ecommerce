@@ -6,7 +6,6 @@ import { AiFillDelete } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { wishlistActions } from "../store/wishlistSlice";
-import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../index.css"
 
