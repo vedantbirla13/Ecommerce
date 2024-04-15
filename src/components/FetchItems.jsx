@@ -13,7 +13,7 @@ const FetchItems = () => {
     const controller = new AbortController();
     const signal = controller.signal;
 
-    dispatch(fetchStatusActions.markFetchingStarted());
+    dispatch(fetchStatusActions.markFetchingStarted(), {signal});
     fetch("https://dummyjson.com/products?limit=0")
       .then((res) => res.json())
       .then(({ products }) => {

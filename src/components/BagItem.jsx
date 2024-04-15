@@ -39,7 +39,7 @@ const BagItem = ({ item }) => {
     </div>
 
     <div className="remove-from-cart" onClick={handleDelete}>
-        <RiDeleteBin5Fill />
+        <RiDeleteBin5Fill size="18px" />
       </div>
 </div>
   )

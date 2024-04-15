@@ -6,8 +6,12 @@ import { AiFillDelete } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { wishlistActions } from "../store/wishlistSlice";
+import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "../index.css"
 
-const HomeItem = ({ item }) => {
+const HomeItem = ({ item,index }) => {
+  console.log(index)
   const dispatch = useDispatch();
   const bagItems = useSelector((state) => state.bag);
   const wishlistItems = useSelector((state) => state.wishlist);
@@ -34,8 +38,11 @@ const HomeItem = ({ item }) => {
   const finalPrice = Math.floor((item.price % item.discountPercentage) * 100);
 
   return (
-    <div className="item-container">
+    <>
+    <div className="item-container" style={{ marginTop: index < 4 ? '40px' : "20px"  }}>
+      <Link to={`/${item.id}`}>
       <img className="item-image" src={item?.thumbnail} alt="item image" />
+      </Link>
       <div className="rating">
         {item?.rating?.stars} ⭐ | {item?.rating}
       </div>
@@ -46,6 +53,7 @@ const HomeItem = ({ item }) => {
         <span className="original-price">Rs {finalPrice}</span>
         <span className="discount">({item?.discountPercentage}% OFF)</span>
         <div className="Wishlist-item">
+
           {wishlistElementFound ? (
             <FaHeart
               title="Wishlisted"
@@ -65,6 +73,7 @@ const HomeItem = ({ item }) => {
           )}
         </div>
       </div>
+
       {bagElementFound ? (
         <button
           className="btn-add-bag btn btn-outline-danger"
@@ -93,6 +102,7 @@ const HomeItem = ({ item }) => {
         </button>
       )}
     </div>
+    </>
   );
 };
 

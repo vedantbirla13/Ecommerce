@@ -71,3 +71,35 @@ const filterSlice = createSlice({
 
 export const filterActions = filterSlice.actions;
 export default filterSlice;
+
+  // Assuming you are using a library like axios for making HTTP requests
+
+  // Function to fetch products from Dummy JSON API
+  // const fetchProducts = async () => {
+  //   try {
+  //     const response = await axios.get('https://dummyjson.com/products');
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error('Error fetching products:', error);
+  //     return [];
+  //   }
+  // };
+
+  // // Function to filter products based on multiple categories
+  // const filterProductsByCategories = (products, categories) => {
+  //   console.log(products, categories)
+  //   return products.products.filter(product => {
+  //     return categories.includes(product.category);
+  //   });
+  // };
+
+  // // Example usage
+  // const categoriesToFilter = ['smartphones', 'laptops'];
+  // fetchProducts()
+  //   .then(products => {
+  //     const filteredProducts = filterProductsByCategories(products, categoriesToFilter);
+  //     console.log(filteredProducts);
+  //   })
+  //   .catch(error => {
+  //     console.error('Error fetching or filtering products:', error);
+  //   });

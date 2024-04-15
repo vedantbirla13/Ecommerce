@@ -4,6 +4,7 @@ import fetchStatusSlice from "./fetchStatusSlice"
 import bagSlice from "./bagSlice"
 import filterSlice from "./filterSlice"
 import wishlistSlice from "./wishlistSlice"
+import singleProductSlice from "./singleProductSlice"
 
 const myntraStore = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ const myntraStore = configureStore({
         fetchStatus: fetchStatusSlice.reducer,
         bag: bagSlice.reducer,
         filter: filterSlice.reducer,
-        wishlist: wishlistSlice.reducer
+        wishlist: wishlistSlice.reducer,
+        singleProduct: singleProductSlice.reducer
     }
 })
 

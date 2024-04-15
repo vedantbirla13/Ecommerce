@@ -8,6 +8,7 @@ import myntraStore from './store/index.js';
 import {Provider} from "react-redux"
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Product from './routes/Product.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/bag",
         element: <Bag />,
+      },
+      {
+        path: "/:id",
+        element: <Product />,
       },
     ],
   },

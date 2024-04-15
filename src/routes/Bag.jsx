@@ -35,8 +35,8 @@ const bag = () => {
               <BagSummary />
             </div>
           ) : (
-            <Link to="/">
-              <button className="btn btn-info mx-2 ">Continue shopping</button>
+            <Link to="/" style={{ textDecoration: "none" }} className="mx-2">
+              <button className="btn btn-info py-2 text-white" style={{ fontFamily: "poppins" }}>Continue shopping</button>
             </Link>
           )}
         </div>
