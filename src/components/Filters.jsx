@@ -150,7 +150,7 @@ const Filters = () => {
             id={`inline-2`}
             className="radio"
             onChange={handlePriceChange}
-            checked={priceChange === "hightoLow"}
+            checked={priceChange === "highToLow"}
           />
         </div>
       </div>
