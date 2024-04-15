@@ -30,7 +30,6 @@ const SingleProduct = ({ singleProduct }) => {
   const handleClick = (image) => {
     setSelectedImage(image);
     setModalShow(true);
-    console.log(image);
   };
 
   const category = items.filter(

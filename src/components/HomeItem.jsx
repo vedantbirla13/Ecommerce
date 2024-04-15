@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 import "../index.css"
 
 const HomeItem = ({ item,index }) => {
-  console.log(index)
   const dispatch = useDispatch();
   const bagItems = useSelector((state) => state.bag);
   const wishlistItems = useSelector((state) => state.wishlist);
