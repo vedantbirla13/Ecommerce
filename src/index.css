@@ -220,7 +220,7 @@
   
   .items-container {
     border: 2px solid rgb(230, 229, 229);
-    width: fit-content;
+    /* width: fit-content; */
     height: fit-content;
   }
   .item-container {

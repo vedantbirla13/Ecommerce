@@ -72,8 +72,8 @@ const SingleProduct = ({ singleProduct }) => {
  
 
   return (
-    <Container fluid className="">
-      <Breadcrumb className="mx-3 mt-4">
+    <Container  className="">
+      <Breadcrumb className="mx-5 mt-4">
       <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
       <Breadcrumb.Item active >Products</Breadcrumb.Item>
       <Breadcrumb.Item active>product {pathname} </Breadcrumb.Item>
