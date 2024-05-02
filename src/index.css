@@ -220,8 +220,8 @@
   
   .items-container {
     border: 2px solid rgb(230, 229, 229);
-    /* width: fit-content; */
-    height: fit-content;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
   .item-container {
     width: 250px;
@@ -686,6 +686,32 @@
   .item-container {
     width: calc(100% - 20px);
     margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+   header {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo_container {
+    margin-right: auto; /* Push logo to the start */
+    margin-left: 0; /* Reset margin */
+  }
+
+  .nav_bar {
+   display: none;
+  }
+
+  .search_bar {
+    margin-left: 10px; /* Add margin to separate from navigation */
+    margin-right: 10px; /* Add margin to separate from profile icon */
+  }
+
+  .action_bar {
+    margin-left: auto; /* Push action icons to the end */
   }
 }
 
